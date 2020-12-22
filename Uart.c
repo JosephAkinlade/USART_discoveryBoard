@@ -17,7 +17,7 @@ void USART2_Init(void){
 
 void GPIO_Init(void){
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
-	GPIOD->MODER |= GPIO_MODER_MODER5_0;  //sets PA5 as output
+	GPIOD->MODER |= GPIO_MODER_MODER5_0;  //sets PA5 as output (for Nucleo board)
 }
 
 void USART2_Transmit(uint8_t data){
