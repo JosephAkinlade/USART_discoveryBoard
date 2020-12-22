@@ -16,8 +16,8 @@ void USART2_Init(void){
 }
 
 void GPIO_Init(void){
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
-	GPIOD->MODER |= GPIO_MODER_MODER13_0;  //sets PD13 as output
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+	GPIOD->MODER |= GPIO_MODER_MODER5_0;  //sets PA5 as output
 }
 
 void USART2_Transmit(uint8_t data){
@@ -25,7 +25,8 @@ void USART2_Transmit(uint8_t data){
 		//GPIOD->BSRR = GPIO_BSRR_BR13;  //turn off led
 	}
 	USART2->DR = data;
-	GPIOD->BSRR |= GPIO_BSRR_BS13;//turn on led
+	//GPIOD->BSRR |= GPIO_BSRR_BS13;//turn on led
+	GPIOA->ODR ^= GPIO_ODR_OD5; //toggle the LED
 	
 }
 
