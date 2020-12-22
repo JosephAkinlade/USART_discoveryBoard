@@ -32,7 +32,7 @@ void ConfigureUSART2(void){
 	USART2->CR1 |= USART_CR1_UE; //Enable USART
 	//Word length = 8 bits, 1 Start bit, 1 Stop bit
 	USART2->BRR = 0x34A; //Baud rate = 9600, oversampling by 16
-  USART2->CR1 |= USART_CR1_TE; //send idle frame as first transmission	
+  	USART2->CR1 |= USART_CR1_TE; //send idle frame as first transmission	
 }
 
 void ConfigureGPIOA(void){
